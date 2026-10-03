@@ -13,6 +13,7 @@
   --color-surface: #f7f7f7;
   --color-surface-accent: #eef5ff;
   --color-danger: #b00020;
+  --color-danger-bg: #fff0f3;
   --color-success: #168a2f;
   --color-success-bg: #eefaf0;
   --color-white: #ffffff;
@@ -90,7 +91,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 3px solid var(--color-primary);
   outline-offset: 3px;
 }
 
@@ -104,15 +105,19 @@ textarea:focus-visible {
   font: inherit;
   text-decoration: none;
   cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
 }
 
 .button:not(:disabled):hover {
   color: var(--color-white);
   background-color: var(--color-primary-dark);
+  box-shadow: 0 4px 12px rgba(0, 63, 134, 0.3);
+  transform: translateY(-2px);
 }
 
 .button:not(:disabled):active {
-  transform: translateY(1px);
+  box-shadow: none;
+  transform: translateY(1px) scale(0.97);
 }
 
 /* ===============================
@@ -176,10 +181,13 @@ textarea:focus-visible {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .product-card:hover {
   border-color: var(--color-primary);
+  box-shadow: 0 6px 18px rgba(0, 87, 184, 0.18);
+  transform: translateY(-3px);
 }
 
 .product-card__image {
@@ -266,7 +274,10 @@ footer p {
 }
 
 [aria-invalid="true"] {
-  border-color: var(--color-danger);
+  border: 2px solid var(--color-danger);
+  background-color: var(--color-danger-bg);
+  outline: 2px solid var(--color-danger);
+  outline-offset: 2px;
 }
 
 .form-actions {
@@ -286,8 +297,11 @@ footer p {
 }
 
 button:disabled {
-  opacity: 0.6;
+  color: var(--color-white);
+  background-color: var(--color-muted);
+  opacity: 0.65;
   cursor: not-allowed;
+  filter: grayscale(0.5);
 }
 
 .form-actions button:not(:disabled):hover {
