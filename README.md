@@ -68,7 +68,7 @@ GitHub Pages: https://eduard-dev6.github.io/kr1-html-css-shop/
 - CSS-переменные в `:root`;
 - единая шкала отступов;
 - переменные для цветов и скруглений;
-- состояния `:hover`, `:focus-visible`, `:active`, `:disabled`;
+- состояния `:hover`, `:active`, `:focus`, `:focus-visible`, `:disabled`;
 - визуальная подсветка ошибочных полей через `aria-invalid`;
 - структурированный файл `css/style.css`.
 
